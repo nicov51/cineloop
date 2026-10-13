@@ -1,0 +1,29 @@
+{
+  "name": "cineloop",
+  "version": "1.0.0",
+  "description": "Back-office de gestion d'un vidéo-club. Application web permettant à un administrateur de gérer un catalogue de films, des fiches adhérents et les emprunts de DVD.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicov51/cineloop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nicov51/cineloop/issues"
+  },
+  "homepage": "https://github.com/nicov51/cineloop#readme",
+  "dependencies": {
+    "ejs": "^7.0.1",
+    "express": "^5.3.0",
+    "mysql2": "^3.24.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
