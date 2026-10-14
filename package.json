@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/nicov51/cineloop#readme",
   "dependencies": {
+    "dotenv": "^18.0.8",
     "ejs": "^7.0.1",
     "express": "^5.3.0",
     "pg": "^8.23.1"
