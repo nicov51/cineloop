@@ -11,9 +11,13 @@ app.use(express.json());
 //extended a true pour parser les structures imbriquées
 app.use(express.urlencoded({ extended: true }));
 
+//moteur de template EJS
+app.set('view engine', 'ejs');
+app.set('views', './src/views');
+
 //route test
 app.get('/', (req, res) => {
-    res.send('le serveur fonctionne');
+    res.render('accueil', { nom: 'CinéLoop', version: '2.0' });
 });
 
 //on demarre le serveur
