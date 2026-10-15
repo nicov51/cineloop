@@ -6,6 +6,9 @@ const pool = require('./db');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+//On sert directement les fichiers du dossier public dont le css
+app.use(express.static('src/public'));
+
 //Middleware pour parser le JSON ou les formulaires
 app.use(express.json());
 //extended a true pour parser les structures imbriquées
