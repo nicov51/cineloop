@@ -1,0 +1,18 @@
+<%- include('partials/header')%>
+
+<h2><%= film.titre %></h2>
+
+<div class="film-detail">
+    <p><strong>Année :</strong> <%= film.annee_sortie %></p>
+    <p><strong>Réalisateur :</strong> <%= film.realisateur %></p>
+    <p><strong>Durée :</strong> <%= film.duree %> min</p>
+    <p><strong>Support :</strong> <%= film.type_support %></p>
+    <p><strong>Stock :</strong> <%= film.quantite_disponible %> / <%= film.quantite_stock %></p>
+    <p><strong>Synopsis :</strong></p>
+    <p><%= film.synopsis %></p>
+    <a href="/film"> Retour à la liste</a>
+</div>
+
+
+
+<%- include('partials/footer')%>
