@@ -4,6 +4,8 @@
   "description": "Back-office de gestion d'un vidéo-club. Application web permettant à un administrateur de gérer un catalogue de films, des fiches adhérents et les emprunts de DVD.",
   "main": "index.js",
   "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

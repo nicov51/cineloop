@@ -22,6 +22,16 @@ app.set('views', './src/views');
 app.get('/', (req, res) => {
     res.render('accueil', { nom: 'CinéLoop', version: '2.0' });
 });
+// SELECT * FROM film LIMIT 1;
+app.get('/films', async (req, res) => {
+    try {
+       const result = await pool.query('SELECT * FROM film ORDER BY titre');
+       res.render('films', { films: result.rows });
+    } catch (error) {
+    console.error(error);
+    res.status(500).send('Probleme serveur');
+    }
+});
 
 //on demarre le serveur
 app.listen(PORT, () => {
