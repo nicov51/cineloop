@@ -14,13 +14,14 @@ router.get('/', async (req, res) => {
 });
 
 // GET adherent/:id
-// router.get('/', (req, res) => {
-//     try {
-//
-//     }catch(error) {
-//         console.error(error);
-//         res.status(500).send('Probleme serveur');
-//     }
-// })
+router.get('/:id', async (req, res) => {
+    try {
+      const result = await pool.query('SELECT * FROM adherent where id = $1', [req.params.id]);
+      res.render('adherent-detail.ejs', { adherent: result.rows[0] });
+    }catch(error) {
+        console.error(error);
+        res.status(500).send('Probleme serveur');
+    }
+})
 
 module.exports = router;
