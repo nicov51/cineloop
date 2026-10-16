@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/nicov51/cineloop#readme",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "dotenv": "^18.0.8",
     "ejs": "^7.0.1",
     "express": "^5.3.0",
