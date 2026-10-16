@@ -1,0 +1,23 @@
+<%- include('partials/header')%>
+
+<h2><%= adherent.prenom %> <%= adherent.nom %></h2>
+
+<div class="adherent-detail">
+    <p><strong>Email :</strong> <%= adherent.email %></p>
+    <p><strong>Téléphone :</strong> <%= adherent.telephone %></p>
+    <p><strong>Adresse :</strong> <%= adherent.adresse %></p>
+    <p><strong>Inscrit le :</strong> <%= adherent.date_inscription %></p>
+    <p>
+        <strong> Statut :</strong>
+        <% if (adherent.actif) { %>
+            ✅ Actif
+        <% } else { %>
+            ❌ Inactif
+        <% } %>
+    </p>
+    <a href="/adherents"> Retour à la liste</a>
+</div>
+
+
+
+<%- include('partials/footer')%>
