@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+
+<div class="login-box">
+<h2>Connexion</h2>
+<p>Vous devez etre identifié pour acceder à cet espace</p>
+
+
+<% if (typeof error !== 'undefined') { %>
+    <p class="error"><%= error %></p>
+<% } %>
+
+<form method="POST" action="/login">
+    <label>Email</label>
+    <input type="email" name="email" required>
+
+    <label>Password</label>
+    <input type="password" name="password" required>
+
+    <button type="submit">Se connecter</button>
+</form>
+</div>
+
+<%- include('partials/footer') %>

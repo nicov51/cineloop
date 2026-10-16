@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../db');
 
+//protection des routes
+const { requireLogin } = require('../middleware/auth');
+router.use(requireLogin);
+
 // GET adherents
 router.get('/', async (req, res) => {
     try {
