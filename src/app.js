@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const filmsRouter = require('./routes/films');
+const adherentsRouter = require('./routes/adherents');
 const pool = require('./db');
 
 const app = express();
@@ -23,8 +24,10 @@ app.set('views', './src/views');
 app.get('/', (req, res) => {
     res.render('accueil', { nom: 'CinéLoop', version: '2.0' });
 });
-//route des films
+//les routes utilisées
 app.use('/films', filmsRouter);
+app.use('/adherents', adherentsRouter);
+
 
 
 //on demarre le serveur
