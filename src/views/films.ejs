@@ -9,6 +9,7 @@
         <p>Année: <%= film.annee_sortie %> </p>
         <p>Réalisateur: <%= film.realisateur %> </p>
         <p>Stock: <%= film.quantite_stock %> </p>
+          <a href="/films/<%= film.id %>">Voir le détail</a>
       </div>
             <% }); %>
     </div>
