@@ -1,0 +1,14 @@
+<%- include('partials/header.ejs') %>
+
+<h2>Liste des adherents (<%= adherents.length %>)</h2>
+<% adherents.forEach((adherent) => { %>
+    <div class="adherent-card">
+      <p>nom: <%= adherent.nom %></p>
+      <p>prénom: <%= adherent.prenom %></p>
+      <a href="/adherents/<%= adherent.id%>">Voir le détail</a>
+    </div>
+<% }); %>
+
+
+<%- include('partials/footer.ejs') %>
+
