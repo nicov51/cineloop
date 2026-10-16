@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
+const filmsRouter = require('./routes/films');
 const pool = require('./db');
 
 const app = express();
@@ -22,26 +23,9 @@ app.set('views', './src/views');
 app.get('/', (req, res) => {
     res.render('accueil', { nom: 'CinéLoop', version: '2.0' });
 });
-// SELECT * FROM film LIMIT 1;
-app.get('/films', async (req, res) => {
-    try {
-       const result = await pool.query('SELECT * FROM film ORDER BY titre');
-       res.render('films', { films: result.rows });
-    } catch (error) {
-    console.error(error);
-    res.status(500).send('Probleme serveur');
-    }
-});
-//placeholder $1 avec postgre =  ? en sql (....where id = ?)
-app.get('/films/:id', async (req, res) => {
-    try {
-        const result = await pool.query('SELECT * FROM film WHERE id = $1', [req.params.id]);
-        res.render('film-detail', { film: result.rows[0] });
-    } catch {
-        console.error(error)
-        res.status(500).send('Probleme serveur');
-    }
-})
+//route des films
+app.use('/films', filmsRouter);
+
 
 //on demarre le serveur
 app.listen(PORT, () => {
