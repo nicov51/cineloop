@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+
+<h2>Nouvel adhérent</h2>
+
+<div class="form-container">
+    <form method="POST" action="/adherents/nouveau">
+
+        <div class="form-group">
+            <label for="prenom">Prénom</label>
+            <input type="text" name="prenom" id="prenom" required>
+        </div>
+
+        <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" name="nom" id="nom" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+        </div>
+
+        <div class="form-group">
+            <label for="telephone">Téléphone</label>
+            <input type="text" name="telephone" id="telephone">
+        </div>
+
+        <div class="form-group">
+            <label for="adresse">Adresse</label>
+            <input type="text" name="adresse" id="adresse">
+        </div>
+
+        <button type="submit" class="btn-primary">Enregistrer l'adhérent</button>
+        <a href="/adherents" class="btn-secondary">Annuler</a>
+    </form>
+</div>
+
+<%- include('partials/footer') %>
