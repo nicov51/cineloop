@@ -176,6 +176,11 @@ h2 {
     color: #555;
 }
 
+.reservation-card form {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
 /* Badges de statut */
 .badge {
     padding: 0.2rem 0.6rem;
@@ -197,6 +202,20 @@ h2 {
 .badge-grey {
     background: #e2e3e5;
     color: #383d41;
+}
+
+.btn-primary {
+    background: #1a1a2e;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-primary:hover {
+    background: #2d2d4e;
 }
 
 /* Footer */
