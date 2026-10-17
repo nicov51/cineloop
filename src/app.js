@@ -4,6 +4,7 @@ const express = require('express');
 const authRouter = require('./routes/auth');
 const filmsRouter = require('./routes/films');
 const adherentsRouter = require('./routes/adherents');
+const reservationsRouter = require('./routes/reservations');
 const pool = require('./db');
 
 const app = express();
@@ -38,6 +39,7 @@ app.get('/', (req, res) => {
 app.use('/', authRouter);
 app.use('/films', filmsRouter);
 app.use('/adherents', adherentsRouter);
+app.use('/reservations', reservationsRouter);
 
 
 

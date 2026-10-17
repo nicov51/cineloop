@@ -1,0 +1,34 @@
+<%- include('partials/header') %>
+
+<h2>Gestion des réservations / </h2>
+<p><%= reservations.length %> réservation(s) au total</p>
+
+<div class="reservations-list">
+
+    <% reservations.forEach((r) => { %>
+
+        <div class="reservation-card">
+            <h3><%= r.titre_film %></h3>
+            <p><strong>Adhérent :</strong> <%= r.prenom_adherent %> <%= r.nom_adherent %></p>
+            <p><strong>Emprunté le :</strong> <%= new Date(r.date_emprunt).toLocaleDateString('fr-FR') %></p>
+            <p><strong>Retour prévu :</strong> <%= new Date(r.date_retour_prevue).toLocaleDateString('fr-FR') %></p>
+
+            <!-- Gestion de l'affichage du statut -->
+            <p>
+                <strong>Statut :</strong>
+                <% if (r.statut === 'TERMINEE') { %>
+                    <span class="badge badge-grey">✅ Terminée le <%= new Date(r.date_retour_effective).toLocaleDateString('fr-FR') %></span>
+                <% } else if (r.statut === 'EN_COURS') { %>
+                    <% if (new Date(r.date_retour_prevue) < new Date()) { %>
+                        <span class="badge badge-red">⚠️ En retard</span>
+                    <% } else { %>
+                        <span class="badge badge-green">📀 En cours</span>
+                    <% } %>
+                <% } %>
+            </p>
+        </div>
+
+    <% }); %>
+</div>
+
+<%- include('partials/footer') %>
