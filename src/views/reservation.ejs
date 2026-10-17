@@ -19,6 +19,9 @@
                 <% if (r.statut === 'TERMINEE') { %>
                     <span class="badge badge-grey">✅ Terminée le <%= new Date(r.date_retour_effective).toLocaleDateString('fr-FR') %></span>
                 <% } else if (r.statut === 'EN_COURS') { %>
+                    <form method="POST" action="/reservations/<%= r.id %>/retour">
+                      <button type="submit" class="btn-primary">Enregistrer le retour</button>
+                    </form>
                     <% if (new Date(r.date_retour_prevue) < new Date()) { %>
                         <span class="badge badge-red">⚠️ En retard</span>
                     <% } else { %>
