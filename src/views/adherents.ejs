@@ -1,6 +1,15 @@
 <%- include('partials/header.ejs') %>
 
-<h2>Liste des adherents (<%= adherents.length %>)</h2>
+<div>
+    <h2>Liste des adherents (<%= adherents.length %>)</h2>
+</div>
+<div class="new-adherent">
+    <a href="/adherents/nouveau" class="btn-primary">+ Nouvel adhérent</a>
+</div>
+<% if (query.success) { %>
+    <div class="alert-success">Opération réussie.</div>
+<% } %>
+
 <% adherents.forEach((adherent) => { %>
     <div class="adherent-card">
       <p>nom: <%= adherent.nom %></p>

@@ -1,7 +1,16 @@
 <%- include('partials/header') %>
 
-<h2>Gestion des réservations / </h2>
-<p><%= reservations.length %> réservation(s) au total</p>
+<div>
+<h2>Gestion des réservations / <%= reservations.length %> réservation(s) au total</h2>
+</div>
+<% if (query.success) { %>
+  <div class="alert-success">Opération réussie.</div>
+<% } %>
+
+
+<div class="new-resa">
+    <a href="/reservations/nouvelle" class="btn-primary">+ Nouvel emprunt</a>
+</div>
 
 <div class="reservations-list">
 
